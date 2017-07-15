@@ -10,7 +10,7 @@
 module.exports = {
     users: {
         id: {type: 'serial', required: true, key: true, unique: true},
-        name: {type: 'text', size: 32, required: true, key: true, unique: true},
+        name: {type: 'text', size: 32, required: true, unique: true},
         password: {type: 'text', size: 32, required: true},
         salt: {type: 'text', size: 8, required: true},
         email: {type: 'text', size: 32, required: true},
@@ -22,7 +22,7 @@ module.exports = {
         status: {type: 'text', required: true, defaultValue: 'active'},
         last_login: {type: 'date', time: false},
         create_at: {type: 'date', time: false},
-        update_at: {type: 'data', time: false}
+        update_at: {type: 'date', time: false}
     },
     user_info: {
         id: {type: 'serial', required: true, key: true, unique: true},
@@ -30,7 +30,7 @@ module.exports = {
         value: {type: 'text', required: true},
         user_id: {type: 'integer', required: true},
         create_at: {type: 'date', time: false},
-        update_at: {type: 'data', time: false}
+        update_at: {type: 'date', time: false}
     },
     posts: {
         id: {type: 'serial', required: true, key: true, unique: true},
@@ -49,9 +49,9 @@ module.exports = {
         create_by: {type: 'integer', required: true},
         create_at: {type: 'date', time: false},
         update_by: {type: 'integer', required: true},
-        update_at: {type: 'data', time: false},
+        update_at: {type: 'date', time: false},
         publish_by: {type: 'integer', required: true},
-        publish_at: {type: 'data', time: false}
+        publish_at: {type: 'date', time: false}
     },
     settings: {
         id: {type: 'serial', required: true, key: true, unique: true},
@@ -60,7 +60,7 @@ module.exports = {
         create_by: {type: 'integer', required: true},
         update_by: {type: 'integer', required: true},
         create_at: {type: 'date', time: false},
-        update_at: {type: 'data', time: false}
+        update_at: {type: 'date', time: false}
     },
     plugins: {
         id: {type: 'serial', required: true, key: true, unique: true},
@@ -73,7 +73,7 @@ module.exports = {
         author_link: {type: 'text'},
         status: {type: 'text', size: 10, required: true, defaultValue: 'wait'},
         create_at: {type: 'date', time: false},
-        update_at: {type: 'data', time: false}
+        update_at: {type: 'date', time: false}
     },
     tags: {
         id: {type: 'serial', required: true, key: true, unique: true},
@@ -81,14 +81,14 @@ module.exports = {
         desc: {type: 'text', size: 128, required: true},
         type: {type: 'text', size: 10, required: true, defaultValue: 'list'},
         create_at: {type: 'date', time: false},
-        update_at: {type: 'data', time: false}
+        update_at: {type: 'date', time: false}
     },
     post_tags: {
         id: {type: 'serial', required: true, key: true, unique: true},
         tag_id: {type: 'integer', required: true},
         post_id: {type: 'integer', required: true},
         create_at: {type: 'date', time: false},
-        update_at: {type: 'data', time: false}
+        update_at: {type: 'date', time: false}
     },
     accesstokens: {
         id: {type: 'serial', required: true, key: true, unique: true},
@@ -96,7 +96,7 @@ module.exports = {
         user_id: {type: 'integer', required: true},
         user_from: {type: 'text', size: 64, required: true, defaultValue: 'web'},
         create_at: {type: 'date', time: false},
-        update_at: {type: 'data', time: false},
+        update_at: {type: 'date', time: false},
         refresh: {type: 'integer', required: true, defaultValue: 0},
         expires: {type: 'number', required: true, defaultValue: 604800}//s
     }
