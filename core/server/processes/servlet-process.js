@@ -9,15 +9,17 @@
 
 const BaseProcess = require('./base-process');
 const config = require('../../../config');
-const DbInitHandle = require('../handles/db-init-handle');
+const ControllerHandle = require('../handles/controller-handle');
+const ServerHandle = require('../handles/server-handle');
 
-class InitProcess extends BaseProcess{
+class ServletProcess extends BaseProcess{
     constructor(cxt){
         super(config, cxt);
         this.setHandle([
-            DbInitHandle
+            ControllerHandle,
+            ServerHandle
         ]);
     }
 }
 
-module.exports = InitProcess;
+module.exports = ServletProcess;

@@ -16,7 +16,6 @@ class DbInitHandle extends BaseHandle{
         //this handle's subject is app config
         const db = connect(subject);
 
-        cxt.dbModel = {};
         for (let schema in schemas){
             if (schemas.hasOwnProperty(schema)) {
                 cxt.dbModel[schema] = db.define(schema, schemas[schema]);

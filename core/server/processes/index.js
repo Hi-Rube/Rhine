@@ -8,11 +8,32 @@
  */
 
 const InitProcess = require('./init-process');
+const ServletProcess = require('./servlet-process');
 
 const processes = [
-    new InitProcess()
+    InitProcess,
+    ServletProcess
 ];
 
-processes.forEach(process => {
+let _cache = {};
+let cxt = {
+    dbModel: {},
+    route: null,
+    emit: function(event, ...cxt){
+        _cache[event] && _cache[event].forEach(listener => {
+            listener.apply(null, cxt);
+        })
+    },
+    on: function(event, func){
+        if (_cache[event]){
+            _cache.push(func);
+        } else {
+            _cache[event] = [func];
+        }
+    }
+};
+processes.forEach(Process => {
+    let process = new Process(cxt);
     process.run();
+    cxt = process.getContext();
 });

@@ -7,17 +7,8 @@
  * of patent rights can be found in the PATENTS file in the same directory.
  */
 
-module.exports = {
-    db: {
-        type: 'sqlite',
-        sqlite: {
-            name: 'Rhine.db'
-        },
-        mysql: {
-
-        }
-    },
-    server: {
-        port: 7758
-    }
+module.exports = (route, cxt) => {
+    route.get('/*', function(){
+        this.body = 'hello world';
+    });
 };

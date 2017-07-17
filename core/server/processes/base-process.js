@@ -22,10 +22,17 @@ class BaseProcess {
         }
     }
 
-    run(){
+    getContext(){
+        return this.cxt;
+    }
+
+    run(subject, cxt){
         if (this.handles && Array.isArray(this.handles)){
-            this.handles.forEach(handle => {
-                handle.run(this.subject, this.cxt);
+            this.handles.forEach(Handle => {
+                (typeof Handle === 'function' ?
+                    new Handle() :
+                    Handle
+                ).run(subject || this.subject, cxt || this.cxt);
             });
         }
     }

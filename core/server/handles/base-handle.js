@@ -9,7 +9,7 @@
 
 class BaseHandle {
     constructor(config){
-        this.config = config;
+        this.config = config || {};
     }
 
     run(subject, cxt){}
