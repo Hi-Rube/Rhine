@@ -12,7 +12,7 @@ var orm = require('fib-orm');
 module.exports = function(config){
     var db = null;
 
-    if (config.db) {
+    if (config.db && config.db.type) {
         switch (config.db.type) {
             case 'sqlite':
                 db = orm.connectSync(`sqlite:${config.db.sqlite.name}`);
