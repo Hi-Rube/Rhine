@@ -16,8 +16,8 @@ const route = require('@fibjs/fibx-router')({
     size: 200
 });
 
-const controllers = fs.readdir(path.join(__dirname, '../controller')).map(ctrName => {
-    return require(`../controller/${ctrName}`);
+const controllers = fs.readdir(path.join(__dirname, '../controllers')).map(ctrName => {
+    return require(`../controllers/${ctrName}`);
 });
 
 class ControllerHandle extends BaseHandle{
@@ -27,7 +27,7 @@ class ControllerHandle extends BaseHandle{
             controller(route, cxt);
         });
         cxt.route = route;
-        cxt.emit('handle:controller:after', route);
+        cxt.emit(cxt.constant.EVENT_HANDLE_CONTROLLER_AFTER, route);
     }
 }
 

@@ -9,6 +9,7 @@
 
 const InitProcess = require('./init-process');
 const ServletProcess = require('./servlet-process');
+const constant = require('../data/constant');
 
 const processes = [
     InitProcess,
@@ -18,6 +19,12 @@ const processes = [
 let _cache = {};
 let cxt = {
     dbModel: {},
+    cache: {
+        data: {},
+        config: {}
+    },
+    constant: constant,
+    services: {},
     route: null,
     emit: function(event, ...cxt){
         _cache[event] && _cache[event].forEach(listener => {

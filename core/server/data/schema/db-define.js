@@ -9,7 +9,7 @@
 
 module.exports = {
     users: {
-        id: {type: 'serial', required: true, key: true, unique: true},
+        id: {type: 'serial', key: true, unique: true},
         name: {type: 'text', size: 32, required: true, unique: true},
         password: {type: 'text', size: 32, required: true},
         salt: {type: 'text', size: 8, required: true},
@@ -25,7 +25,7 @@ module.exports = {
         update_at: {type: 'date', time: false}
     },
     user_info: {
-        id: {type: 'serial', required: true, key: true, unique: true},
+        id: {type: 'serial', key: true, unique: true},
         key: {type: 'text', required: true, unique: true},
         value: {type: 'text', required: true},
         user_id: {type: 'integer', required: true},
@@ -33,7 +33,7 @@ module.exports = {
         update_at: {type: 'date', time: false}
     },
     posts: {
-        id: {type: 'serial', required: true, key: true, unique: true},
+        id: {type: 'serial', key: true, unique: true},
         uuid: {type: 'text', size: 64, required: true, unique: true},
         title: {type: 'text', required: true},
         post_html: {type: 'text', required: true},
@@ -54,7 +54,7 @@ module.exports = {
         publish_at: {type: 'date', time: false}
     },
     settings: {
-        id: {type: 'serial', required: true, key: true, unique: true},
+        id: {type: 'serial', key: true, unique: true},
         key: {type: 'text', required: true, unique: true},
         value: {type: 'text', required: true},
         create_by: {type: 'integer', required: true},
@@ -63,7 +63,7 @@ module.exports = {
         update_at: {type: 'date', time: false}
     },
     plugins: {
-        id: {type: 'serial', required: true, key: true, unique: true},
+        id: {type: 'serial', key: true, unique: true},
         uuid: {type: 'text', size: 64, required: true},
         path: {type: 'text', required: true},
         version: {type: 'text', required: true},
@@ -76,7 +76,7 @@ module.exports = {
         update_at: {type: 'date', time: false}
     },
     tags: {
-        id: {type: 'serial', required: true, key: true, unique: true},
+        id: {type: 'serial', key: true, unique: true},
         name: {type: 'text', size: 32, required: true, unique: true},
         desc: {type: 'text', size: 128, required: true},
         type: {type: 'text', size: 10, required: true, defaultValue: 'list'},
@@ -84,14 +84,14 @@ module.exports = {
         update_at: {type: 'date', time: false}
     },
     post_tags: {
-        id: {type: 'serial', required: true, key: true, unique: true},
+        id: {type: 'serial', key: true, unique: true},
         tag_id: {type: 'integer', required: true},
         post_id: {type: 'integer', required: true},
         create_at: {type: 'date', time: false},
         update_at: {type: 'date', time: false}
     },
     accesstokens: {
-        id: {type: 'serial', required: true, key: true, unique: true},
+        id: {type: 'serial', key: true, unique: true},
         token: {type: 'text', size: 32, required: true},
         user_id: {type: 'integer', required: true},
         user_from: {type: 'text', size: 64, required: true, defaultValue: 'web'},

@@ -7,12 +7,10 @@
  * of patent rights can be found in the PATENTS file in the same directory.
  */
 
-const path = require('path');
+module.exports = {
+    EVENT_HANDLE_SERVICE_INIT_AFTER: 'handle:serviceInit:after',
+    EVENT_HANDLE_CONTROLLER_AFTER: 'handle:controller:after',
+    EVENT_CACHE_CONFIG_CHANGE: 'cache:config:change',
 
-module.exports = (route, cxt) => {
-    route.get('/*', function(){
-        cxt.cache.config.isFirstInit ?
-            this.redirect('/config') :
-            this.viewFile(path.join(__dirname, '../views/index.ejs'), cxt.cache.data);
-    });
+    FLAG_ROLE_ORIGIN: -1
 };

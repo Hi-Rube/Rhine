@@ -16,18 +16,21 @@ class DbInitHandle extends BaseHandle{
         //this handle's subject is app config
         const db = connect(subject);
 
-        for (let schema in schemas){
-            if (schemas.hasOwnProperty(schema)) {
-                cxt.dbModel[schema] = db.define(schema, schemas[schema]);
+        if (db) {
+            for (let schema in schemas) {
+                if (schemas.hasOwnProperty(schema)) {
+                    let schemaModelName = `${schema[0].toUpperCase()}${schema.substr(1)}`;
+                    cxt.dbModel[schemaModelName] = db.define(schema, schemas[schema]);
+                }
             }
-        }
 
-        db.sync(function(err){
-            if (err){
-                //TODO: log record
-                throw err;
-            }
-        });
+            db.sync(function(err) {
+                if (err) {
+                    //TODO: log record
+                    throw err;
+                }
+            });
+        }
     }
 }
 
