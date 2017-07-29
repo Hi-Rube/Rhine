@@ -31,11 +31,43 @@ body{
 
 /* content */
 .r-config-content{
-    height: 600px;
+    height: 520px;
     width: 980px;
     background: #FBFBFB;
     border-radius: 10px;
     position: relative;
     top: -150px;
     margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.r-config-content-info{
+    border-right: 1px dashed #ccc;
+    width: 490px;
+    height: 520px;
+    float: left;
+    text-align: center;
+}
+
+.r-config-content-setting{
+    padding: 10px 20px;
+    width: 449px;
+    height: 500px;
+    float: right;
+}
+
+/* content blog info */
+.r-config-content-bs .bs-input-group{
+    width: 100%;
+    text-align: center;
+}
+
+.bs-input-group .ri-unit-input{
+    margin-bottom: 20px;
+}
+
+.bs-input-group .ri-unit-input label{
+    width: 160px;
+    display: inline-block;
+    text-align: left;
 }

@@ -4,6 +4,35 @@ body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,fieldset,button,inp
     font-family: "Microsoft YaHei", sans-serif;
 }
 
+.ri-input{
+    display: block;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    -webkit-appearance: none;
+    outline: 0;
+    padding: 5px;
+    min-width: 200px;
+    background: none;
+}
+
+.ri-unit-input .ri-input{
+    display: inline-block;
+    margin-left: 3px;
+}
+
+.ri-unit-input label{
+    color: #333;
+}
+
+.ri-button{
+    border: none;
+    background: #35b5fc;
+    color: #fff;
+    padding: 10px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
 .ri-nav-progress-item{
     color: #fff;
     display: inline-block;

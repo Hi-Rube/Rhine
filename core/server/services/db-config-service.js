@@ -7,6 +7,9 @@
  * of patent rights can be found in the PATENTS file in the same directory.
  */
 
-define(function(){
-    
-});
+module.exports = (mount, cxt) => {
+
+    mount.changeDbConfig = ()=>{
+        return false;
+    };
+};

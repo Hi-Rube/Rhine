@@ -8,6 +8,7 @@
  */
 
 module.exports = (mount, cxt) => {
+
     mount.isFirstInit = () => {
 
         let isFirst = true;

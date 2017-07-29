@@ -1,4 +1,27 @@
-<div class="r-config-content-info">
+<div class="r-config-content-info r-config-content-bi">
     <img src="/assert/img/logo/config-page-river.png" width="400">
 </div>
-<div class="r-config-content-setting"></div>
+<div class="r-config-content-setting r-config-content-bs">
+    <div class="bs-input-group">
+        <form action="/config" method="post">
+            <div class="ri-unit-input">
+                <label>Blog Name</label>
+                <input class="ri-input" type="text" name="blogName" placeholder="please input blog name"/>
+            </div>
+            <div class="ri-unit-input">
+                <label>Admin Name</label>
+                <input class="ri-input" type="text" name="blogAdminName" placeholder="please input admin name"/>
+            </div>
+            <div class="ri-unit-input">
+                <label>Admin Password</label>
+                <input class="ri-input" type="password" name="blogAdminPwd" placeholder="please input admin password"/>
+            </div>
+            <div class="ri-unit-input">
+                <label>Password Again</label>
+                <input class="ri-input" type="password" name="blogAdminPwdA" placeholder="please input password again"/>
+            </div>
+            <button class="ri-button" type="submit">Set Blog Info</button>
+            <input hidden name="action" value="blogInfo"/>
+        </form>
+    </div>
+</div>

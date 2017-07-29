@@ -8,22 +8,68 @@
  */
 
 const path = require('path');
+const configTemplatePath = path.join(__dirname, '../views/config.ejs');
+
+const DS_TEMPLATE = '/config/database-setting.ejs';
+const BI_TEMPLATE=  '/config/blog-info.ejs';
+const SS_TEMPLATE = '/config/success.ejs';
+
+function buildDSData(cxt){
+    return {
+        page: {
+            selected: 1,
+            contentTemplate: DS_TEMPLATE
+        },
+        data: {
+            dbok: !!cxt.cache.config.dbok,
+            dbInfo: cxt.cache.config.dbInfo
+        }
+    };
+}
+
+function buildBIData(cxt){
+    return {
+        page: {
+            selected: 2,
+            contentTemplate: BI_TEMPLATE
+        }
+    };
+}
+
+function buildSSData(cxt){
+    return {
+        page: {
+            selected: 3,
+            contentTemplate: SS_TEMPLATE
+        }
+    };
+}
 
 module.exports = (route, cxt) => {
     route.get('/config', function(){
-        let data = {
-            page: {
-                selected: 1,
-                contentTemplate: '/config/blog-info.ejs'
-            }
-        };
 
         cxt.cache.config.isFirstInit ?
-            this.viewFile(path.join(__dirname, '../views/config.ejs'), data) :
+            this.viewFile(configTemplatePath, buildDSData(cxt)) :
             this.redirect('/');
     });
 
     route.post('/config', function(){
 
+        switch (this.form.action){
+            case 'databaseSetting':
+                this.type = 'text/html';
+                if (cxt.services.changeDbConfig()){
+                    this.viewFile(configTemplatePath, buildBIData(cxt));
+                } else {
+                    this.viewFile(configTemplatePath, buildDSData(cxt));
+                }
+                break;
+            case 'blogInfo':
+                this.type = 'text/html';
+                this.viewFile(configTemplatePath, buildSSData(cxt));
+                break;
+            default:
+                this.redirect('/config');
+        }
     });
 };

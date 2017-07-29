@@ -1,0 +1,20 @@
+<div class="r-config-content-info r-config-content-bi">
+    <img src="/assert/img/logo/config-page-river.png" width="400">
+</div>
+<div class="r-config-content-setting r-config-content-bs">
+    <form action="/config" method="post">
+        <select class="ri-select" name="databaseType">
+            <option value="sqlite" <% if (data.dbok && data.dbInfo.type === 'sqlite'){%> selected <% } %> >SQLite</option>
+            <option value="mysql"  <% if (data.dbok && data.dbInfo.type === 'mysql'){%> selected <% } %> >Mysql</option>
+        </select>
+        <input class="ri-input" value="<%= data.dbok ? data.dbInfo[data.dbInfo.type].name : ''%>" type="text"/>
+        <button class="ri-button" type="submit">
+            <% if (data.dbok){ %>
+                Update Database
+            <% } else {%>
+                Set Database
+            <% } %>
+        </button>
+        <input hidden name="action" value="databaseSetting"/>
+    </form>
+</div>
