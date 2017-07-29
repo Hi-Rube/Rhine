@@ -11,6 +11,19 @@ const path = require('path');
 
 module.exports = (route, cxt) => {
     route.get('/config', function(){
-        this.viewFile(path.join(__dirname, '../views/config.ejs'));
+        let data = {
+            page: {
+                selected: 1,
+                contentTemplate: '/config/blog-info.ejs'
+            }
+        };
+
+        cxt.cache.config.isFirstInit ?
+            this.viewFile(path.join(__dirname, '../views/config.ejs'), data) :
+            this.redirect('/');
+    });
+
+    route.post('/config', function(){
+
     });
 };

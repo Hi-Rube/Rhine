@@ -17,7 +17,9 @@ class ServerHandle extends BaseHandle{
     run(subject, cxt){
         //this handle's subject is app config
         const fileHandler = new http.fileHandler(path.join(__dirname, '../../assert'));
-        fibx.use(fibxEjs());
+        fibx.use(fibxEjs({
+            root: path.join(__dirname, '../views/include')
+        }));
         fibx.use('/assert/(.*)', fileHandler);
         fibx.use('/', cxt.route.getAllRoute());
         fibx.listen(subject.server.port);

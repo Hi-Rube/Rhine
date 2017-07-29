@@ -1,0 +1,25 @@
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,fieldset,button,input,textarea,form,th,td {
+    margin: 0;
+    padding: 0;
+    font-family: "Microsoft YaHei", sans-serif;
+}
+
+.ri-nav-progress-item{
+    color: #fff;
+    display: inline-block;
+    font-size: 20px;
+}
+
+.ri-nav-progress-item .item-no{
+    display: inline-block;
+    text-align: center;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    border: 2px solid #fff;
+}
+
+.ri-iconfont{
+    color:#fff;
+}

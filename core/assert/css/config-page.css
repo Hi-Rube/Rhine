@@ -1,0 +1,41 @@
+body{
+    background: #1c1917;
+}
+
+/* header */
+.r-config-header{
+    height: 300px;
+    width: 100%;
+    background: #35b5fc;
+    overflow: hidden;
+}
+
+.r-config-progress{
+    width: 100%;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.r-config-progress-selected{
+    font-weight: bolder;
+    color: #ffefd5;
+}
+
+.r-config-progress-selected .item-no{
+    border: 3px dotted #ffefd5;
+}
+
+.r-config-progress .ri-icon-jindu{
+    margin: 20px;
+}
+
+/* content */
+.r-config-content{
+    height: 600px;
+    width: 980px;
+    background: #FBFBFB;
+    border-radius: 10px;
+    position: relative;
+    top: -150px;
+    margin: 0 auto;
+}
