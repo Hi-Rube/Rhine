@@ -39,4 +39,17 @@ module.exports = (mount, cxt) => {
             return false;
         }
     };
+
+    mount.updateBlogTitle = (title, userId) => {
+        let setting = new cxt.dbModel.Settings({
+            key: 'blog_title',
+            value: title,
+            create_by: cxt.constant.FLAG_ROLE_ORIGIN,
+            update_by: userId || cxt.constant.FLAG_ROLE_ORIGIN
+        });
+
+        setting.saveSync({
+            key: 'blog_title'
+        });
+    };
 };

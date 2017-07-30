@@ -39,6 +39,10 @@ module.exports = (mount, cxt) => {
     };
 
     mount.dbInit = (config) => {
+        if (cxt.db){
+            cxt.db.closeSync();
+        }
+
         const db = connect(config);
 
         if (db) {
@@ -50,6 +54,7 @@ module.exports = (mount, cxt) => {
             }
 
             db.syncSync();
+            cxt.db = db;
         }
     }
 };

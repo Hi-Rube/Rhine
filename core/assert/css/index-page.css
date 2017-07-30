@@ -1,0 +1,8 @@
+.r-i-bg{
+    width: 100%;
+    height: 300px;
+}
+
+.r-i-bg-default{
+    background: url("/assert/img/bg/rhine-hd-1.jpg");
+}
