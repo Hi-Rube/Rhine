@@ -62,12 +62,19 @@ body{
     text-align: center;
 }
 
-.bs-input-group .ri-unit-input{
-    margin-bottom: 20px;
+.bs-input-group .ri-unit-input,
+.r-config-content-ds .ri-unit-input{
+    margin-bottom: 30px;
 }
 
-.bs-input-group .ri-unit-input label{
+.bs-input-group .ri-unit-input label,
+.r-config-content-ds .ri-unit-input label,
+.r-config-content-ds .ri-unit-select label{
     width: 160px;
     display: inline-block;
     text-align: left;
+}
+
+.r-config-content-ds .ri-select{
+    margin-bottom: 40px;
 }

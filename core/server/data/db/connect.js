@@ -7,7 +7,8 @@
  * of patent rights can be found in the PATENTS file in the same directory.
  */
 
-var orm = require('fib-orm');
+const orm = require('fib-orm');
+const os = require('os');
 
 module.exports = function(config){
     var db = null;
@@ -18,6 +19,8 @@ module.exports = function(config){
                 db = orm.connectSync(`sqlite:${config.db.sqlite.name}`);
                 break;
             case 'mysql':
+                let mc = config.db.mysql;
+                db = orm.connectSync(`mysql://${mc.user}:${mc.password}@${mc.host}:${mc.port}/${mc.database}`);
                 break;
         }
     }

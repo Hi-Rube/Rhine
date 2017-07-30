@@ -9,6 +9,7 @@
 
 const path = require('path');
 const configTemplatePath = path.join(__dirname, '../views/config.ejs');
+const ConfigUtil = require('../utils/biz/config-util');
 
 const DS_TEMPLATE = '/config/database-setting.ejs';
 const BI_TEMPLATE=  '/config/blog-info.ejs';
@@ -58,7 +59,7 @@ module.exports = (route, cxt) => {
         switch (this.form.action){
             case 'databaseSetting':
                 this.type = 'text/html';
-                if (cxt.services.changeDbConfig()){
+                if (cxt.services.changeDbConfig(ConfigUtil.convertConfigDBForm2NewConfig(this.form), cxt.cache.config.dbInfo)){
                     this.viewFile(configTemplatePath, buildBIData(cxt));
                 } else {
                     this.viewFile(configTemplatePath, buildDSData(cxt));

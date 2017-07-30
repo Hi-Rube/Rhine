@@ -11,8 +11,9 @@ const path = require('path');
 
 module.exports = (route, cxt) => {
     route.get('/*', function(){
-        cxt.cache.config.isFirstInit ?
-            this.redirect('/config') :
-            this.viewFile(path.join(__dirname, '../views/index.ejs'), cxt.cache.data);
+        this.body = cxt.services.isFirstInit();
+        //cxt.cache.config.isFirstInit ?
+        //    this.redirect('/config') :
+        //    this.viewFile(path.join(__dirname, '../views/index.ejs'), cxt.cache.data);
     });
 };

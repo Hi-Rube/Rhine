@@ -17,8 +17,8 @@ class InitProcess extends BaseProcess{
     constructor(cxt){
         super(config, cxt);
         this.setHandle([
-            DbInitHandle,
             ServiceInitHandle,
+            DbInitHandle,
             CacheInitHandle
         ]);
     }

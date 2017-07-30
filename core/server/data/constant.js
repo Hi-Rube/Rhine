@@ -11,6 +11,7 @@ module.exports = {
     EVENT_HANDLE_SERVICE_INIT_AFTER: 'handle:serviceInit:after',
     EVENT_HANDLE_CONTROLLER_AFTER: 'handle:controller:after',
     EVENT_CACHE_CONFIG_CHANGE: 'cache:config:change',
+    EVENT_HANDLE_DB_INIT_RETRY: 'handle:dbInit:retry',
 
     FLAG_ROLE_ORIGIN: -1
 };

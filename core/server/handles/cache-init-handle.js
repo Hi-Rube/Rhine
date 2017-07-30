@@ -18,10 +18,6 @@ class CacheInitHandle extends BaseHandle{
         }
 
         cxt.cache.config.isFirstInit = cxt.services.isFirstInit();
-
-        cxt.on(cxt.constant.EVENT_CACHE_CONFIG_CHANGE, (key, value)=>{
-            console.log(key, value);
-        });
     }
 }
 

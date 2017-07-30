@@ -33,6 +33,17 @@ body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,fieldset,button,inp
     cursor: pointer;
 }
 
+.ri-select{
+    border: none;
+    width: 200px;
+    height: 30px;
+    line-height: 30px;
+    border-bottom: 1px solid #ccc;
+    outline: 0;
+    background: none;
+    padding: 5px;
+}
+
 .ri-nav-progress-item{
     color: #fff;
     display: inline-block;
@@ -51,4 +62,8 @@ body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,fieldset,button,inp
 
 .ri-iconfont{
     color:#fff;
+}
+
+.ri-hide{
+    display: none;
 }

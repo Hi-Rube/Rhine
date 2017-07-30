@@ -1,13 +1,43 @@
-<div class="r-config-content-info r-config-content-bi">
+<div class="r-config-content-info r-config-content-di">
     <img src="/assert/img/logo/config-page-river.png" width="400">
 </div>
-<div class="r-config-content-setting r-config-content-bs">
+<div class="r-config-content-setting r-config-content-ds">
     <form action="/config" method="post">
-        <select class="ri-select" name="databaseType">
-            <option value="sqlite" <% if (data.dbok && data.dbInfo.type === 'sqlite'){%> selected <% } %> >SQLite</option>
-            <option value="mysql"  <% if (data.dbok && data.dbInfo.type === 'mysql'){%> selected <% } %> >Mysql</option>
-        </select>
-        <input class="ri-input" value="<%= data.dbok ? data.dbInfo[data.dbInfo.type].name : ''%>" type="text"/>
+        <div class="ri-unit-select">
+            <label>Type</label>
+            <select class="ri-select" name="type">
+                <option value="sqlite" <% if (data.dbok && data.dbInfo.type === 'sqlite'){%> selected <% } %> >SQLite</option>
+                <option value="mysql"  <% if (data.dbok && data.dbInfo.type === 'mysql'){%> selected <% } %> >Mysql</option>
+            </select>
+        </div>
+        <div class="ds-sqlite-setting <% if (data.dbok && data.dbInfo.type === 'mysql'){ %> ri-hide <% } %>">
+            <div class="ri-unit-input">
+                <label>Database Name</label>
+                <input class="ri-input" name="name" placeholder="please input database name" value="<%= data.dbok ? data.dbInfo[data.dbInfo.type].name : ''%>" type="text"/>
+            </div>
+        </div>
+        <div class="ds-mysql-setting <% if (!data.dbok || (data.dbok && data.dbInfo.type === 'sqlite')){ %> ri-hide <% } %>">
+            <div class="ri-unit-input">
+                <label>Database Name</label>
+                <input class="ri-input" name="database" type="text" placeholder="please input database name"/>
+            </div>
+            <div class="ri-unit-input">
+                <label>Mysql Host</label>
+                <input class="ri-input" name="host" type="text" placeholder="please input mysql host"/>
+            </div>
+            <div class="ri-unit-input">
+                <label>Mysql Port</label>
+                <input class="ri-input" name="port" type="text" placeholder="please input mysql port"/>
+            </div>
+            <div class="ri-unit-input">
+                <label>User Name</label>
+                <input class="ri-input" name="user" type="text" placeholder="please input mysql user name"/>
+            </div>
+            <div class="ri-unit-input">
+                <label>User Password</label>
+                <input class="ri-input" name="password" type="text" placeholder="please input mysql user password"/>
+            </div>
+        </div>
         <button class="ri-button" type="submit">
             <% if (data.dbok){ %>
                 Update Database
