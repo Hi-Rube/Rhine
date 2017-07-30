@@ -8,7 +8,6 @@
  */
 
 const orm = require('fib-orm');
-const os = require('os');
 
 module.exports = function(config){
     var db = null;
