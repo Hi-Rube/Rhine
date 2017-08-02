@@ -68,7 +68,11 @@ module.exports = (route, cxt) => {
             case 'blogInfo':
                 this.type = 'text/html';
                 cxt.services.updateBlogTitle(this.form['blogName']);
-                //cxt.services.createUser(this.form['blogAdminName']);
+                cxt.services.createUser(
+                    this.form['blogAdminName'],
+                    this.form['blogAdminPwdA'],
+                    this.form['blogAdminEmail']
+                );
                 this.viewFile(configTemplatePath, buildSSData(cxt));
                 break;
             default:
