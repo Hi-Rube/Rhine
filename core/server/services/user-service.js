@@ -12,8 +12,14 @@ const md5 = require('hash').md5;
 
 module.exports = (mount, cxt) => {
 
-    mount.createToken = () => {
-        return md5(uuid.node().toString('base64') + Date.now()).digest().hex();
+    mount.createToken = (session) => {
+        let token = md5(uuid.node().toString('base64') + Date.now()).digest().hex();
+
+        if (session){
+            session.token = token;
+        }
+
+        return token;
     };
 
     mount.createUser = (name, password, email, session) => {
@@ -41,5 +47,6 @@ module.exports = (mount, cxt) => {
             update_at: Date.now()
         });
         accesstoken.createSync();
+        session.token = accesstoken.token;
     };
 };

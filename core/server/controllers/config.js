@@ -71,7 +71,8 @@ module.exports = (route, cxt) => {
                 cxt.services.createUser(
                     this.form['blogAdminName'],
                     this.form['blogAdminPwdA'],
-                    this.form['blogAdminEmail']
+                    this.form['blogAdminEmail'],
+                    this.r.session
                 );
                 this.viewFile(configTemplatePath, buildSSData(cxt));
                 break;
