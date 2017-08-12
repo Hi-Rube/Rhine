@@ -34,4 +34,12 @@ module.exports = (mount, cxt) => {
 
         session.user = user;
     };
+
+    mount.loginAuth = (name, password, session) => {
+
+        let user = cxt.dbModel.Users.findOne({name: name});
+        if (user && md5(user.salt + password).digest(user.salt).hex() === password){
+            session.user = user;
+        }
+    };
 };
