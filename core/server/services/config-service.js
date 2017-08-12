@@ -24,14 +24,20 @@ module.exports = (mount, cxt) => {
     mount.passFirstInit = () => {
 
         if (cxt.dbModel.Settings){
-            let setting = new cxt.dbModel.Settings({
+            let obj = {
                 key: 'init_first',
                 value: '0',
                 create_by: cxt.constant.FLAG_ROLE_ORIGIN,
                 update_by: cxt.constant.FLAG_ROLE_ORIGIN
-            });
+            };
+
             try{
-                return !!setting.saveSync();
+                let setting = cxt.dbModel.Settings.oneSync({
+                    key: 'init_first'
+                });
+
+                setting && setting.id ? setting.saveSync(obj) : cxt.dbModel.Settings.createSync(obj);
+                cxt.cache.config.isFirstInit = false;
             } catch (e){
                 return false;
             }
@@ -41,15 +47,19 @@ module.exports = (mount, cxt) => {
     };
 
     mount.updateBlogTitle = (title, userId) => {
-        let setting = new cxt.dbModel.Settings({
+
+        let obj = {
             key: 'blog_title',
             value: title,
             create_by: cxt.constant.FLAG_ROLE_ORIGIN,
             update_by: userId || cxt.constant.FLAG_ROLE_ORIGIN
-        });
+        };
 
-        setting.saveSync({
+        let setting = cxt.dbModel.Settings.oneSync({
             key: 'blog_title'
         });
+
+        setting && setting.id ? setting.saveSync(obj) : cxt.dbModel.Settings.createSync(obj);
+        cxt.cache.data.blog.title = title;
     };
 };

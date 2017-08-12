@@ -21,7 +21,7 @@ module.exports = (mount, cxt) => {
         let salt = uuid.node().toString('base64').substr(0, 8),
             pwd = md5(salt + password).digest(salt).hex();
 
-        let user = new cxt.dbModel.Users({
+        let user = cxt.dbModel.Users.createSync({
             name: name,
             password: pwd,
             salt: salt,
@@ -30,7 +30,6 @@ module.exports = (mount, cxt) => {
             create_at: Date.now(),
             update_at: Date.now()
         });
-        user.createSync();
 
         session.user = user;
     };

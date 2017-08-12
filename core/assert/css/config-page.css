@@ -78,3 +78,23 @@ body{
 .r-config-content-ds .ri-select{
     margin-bottom: 40px;
 }
+
+/* content success page */
+.r-config-success-content{
+    background: #171843;
+    text-align: center;
+}
+
+.r-config-success-img{
+    width: 500px;
+}
+
+.r-config-success-msg{
+    letter-spacing: 2px;
+    color: #f5f5f5;
+    margin: 20px 0 50px 0;
+}
+
+.r-config-success-content .ri-button{
+    margin: 0 10px;
+}

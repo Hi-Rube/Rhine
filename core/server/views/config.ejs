@@ -9,7 +9,7 @@
 </head>
 <body>
 <%- include('/config/header.ejs', {selected: page.selected, i18n: i18n}) %>
-<div class="r-config-content">
+<div class="r-config-content <% if (page.selected === 3) {%> r-config-success-content <% } %>">
     <%- include(page.contentTemplate, {i18n: i18n}) %>
 </div>
 </body>

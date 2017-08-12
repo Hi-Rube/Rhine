@@ -77,6 +77,7 @@ module.exports = (route, cxt) => {
                     this.form['blogAdminEmail'],
                     this.r.session
                 );
+                cxt.services.passFirstInit();
                 this.viewFile(configTemplatePath, buildSSData(cxt));
                 break;
             default:

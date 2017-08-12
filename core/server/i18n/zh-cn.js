@@ -30,7 +30,11 @@ module.exports = {
             ADMIN_PASSWORD: '管理员密码',
             PASSWORD_AGAIN: '再次输入密码',
             ADMIN_EMAIL: '管理员邮箱',
-            ACTION_SET_BLOG_INFO: '设置博客信息'
+            ACTION_SET_BLOG_INFO: '设置博客信息',
+
+            SUCCESS_MESSAGE: '恭喜你成功完成博客配置信息, 请选择下一步操作',
+            ACTION_GO_INDEX: '浏览首页',
+            ACTION_GO_ADMIN: '去管理'
         }
     }
 };

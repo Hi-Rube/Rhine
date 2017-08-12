@@ -16,7 +16,9 @@ let _cache = {};
 let cxt = {
     dbModel: {},
     cache: {
-        data: {},
+        data: {
+            blog: {}
+        },
         config: {},
         language: {}
     },
