@@ -7,6 +7,11 @@
  * of patent rights can be found in the PATENTS file in the same directory.
  */
 
-module.exports = (router, cxt) => {
-
+module.exports = {
+    engine: 'ejs',
+    route: {
+        '/': 'index.ejs',
+        '/blog': 'blog.ejs',
+        '/detail': 'detail.ejs'
+    }
 };
