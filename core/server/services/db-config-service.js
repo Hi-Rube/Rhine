@@ -11,7 +11,7 @@ const schemas = require('../data/schema/db-define');
 const ObjectUtil = require('../utils/object-util');
 const fs = require('fs');
 const path = require('path');
-const CONFIG_FILE_PATH = path.join(__dirname, '../../../config.json');
+const CONFIG_FILE_PATH = path.join(__dirname, '../../../config-runtime.json');
 
 module.exports = (mount, cxt) => {
 

@@ -7,15 +7,11 @@
  * of patent rights can be found in the PATENTS file in the same directory.
  */
 
-const InitProcess = require('./init-process');
-const ServletProcess = require('./servlet-process');
 const constant = require('../data/constant');
+const fs = require('fs');
+const path = require('path');
 
-const processes = [
-    InitProcess,
-    ServletProcess
-];
-
+//cache && cxt
 let _cache = {};
 let cxt = {
     dbModel: {},
@@ -49,6 +45,20 @@ let cxt = {
         }
     }
 };
+
+//config change to runtime
+let configRuntimePath = path.join(__dirname, '../../../config-runtime.json'),
+    configPath = path.join(__dirname, '../../../config.json');
+if (!fs.existsSync(configRuntimePath)){
+    fs.copy(configPath, configRuntimePath);
+}
+
+//process depend on config-runtime.json
+const processes = [
+    require('./init-process'),
+    require('./servlet-process')
+];
+
 processes.forEach(Process => {
     let process = new Process(cxt);
     process.run();

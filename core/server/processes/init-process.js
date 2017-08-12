@@ -8,7 +8,7 @@
  */
 
 const BaseProcess = require('./base-process');
-const config = require('../../../config');
+const config = require('../../../config-runtime');
 const DbInitHandle = require('../handles/db-init-handle');
 const CacheInitHandle = require('../handles/cache-init-handle');
 const ServiceInitHandle = require('../handles/service-init-handle');
