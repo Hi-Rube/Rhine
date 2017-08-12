@@ -24,7 +24,8 @@ function buildDSData(cxt){
         data: {
             dbok: !!cxt.cache.config.dbok,
             dbInfo: cxt.cache.config.dbInfo
-        }
+        },
+        i18n: cxt.cache.language.i18n
     };
 }
 
@@ -33,7 +34,8 @@ function buildBIData(cxt){
         page: {
             selected: 2,
             contentTemplate: BI_TEMPLATE
-        }
+        },
+        i18n: cxt.cache.language.i18n
     };
 }
 
@@ -42,7 +44,8 @@ function buildSSData(cxt){
         page: {
             selected: 3,
             contentTemplate: SS_TEMPLATE
-        }
+        },
+        i18n: cxt.cache.language.i18n
     };
 }
 

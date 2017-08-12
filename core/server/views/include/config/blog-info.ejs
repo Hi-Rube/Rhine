@@ -5,26 +5,26 @@
     <div class="bs-input-group">
         <form action="/config" method="post">
             <div class="ri-unit-input">
-                <label>Blog Name</label>
+                <label><%=i18n.page.config.BLOG_NAME%></label>
                 <input class="ri-input" type="text" name="blogName" placeholder="please input blog name"/>
             </div>
             <div class="ri-unit-input">
-                <label>Admin Name</label>
+                <label><%=i18n.page.config.ADMIN_NAME%></label>
                 <input class="ri-input" type="text" name="blogAdminName" placeholder="please input admin name"/>
             </div>
             <div class="ri-unit-input">
-                <label>Admin Password</label>
+                <label><%=i18n.page.config.ADMIN_PASSWORD%></label>
                 <input class="ri-input" type="password" name="blogAdminPwd" placeholder="please input admin password"/>
             </div>
             <div class="ri-unit-input">
-                <label>Password Again</label>
+                <label><%=i18n.page.config.PASSWORD_AGAIN%></label>
                 <input class="ri-input" type="password" name="blogAdminPwdA" placeholder="please input password again"/>
             </div>
             <div class="ri-unit-input">
-                <label>Admin Email</label>
+                <label><%=i18n.page.config.ADMIN_EMAIL%></label>
                 <input class="ri-input" type="email" name="blogAdminEmail" placeholder="please input your email"/>
             </div>
-            <button class="ri-button" type="submit">Set Blog Info</button>
+            <button class="ri-button" type="submit"><%=i18n.page.config.ACTION_SET_BLOG_INFO%></button>
             <input hidden name="action" value="blogInfo"/>
         </form>
     </div>

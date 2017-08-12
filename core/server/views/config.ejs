@@ -1,16 +1,16 @@
 <html xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="utf-8"/>
-    <title>Rihne Configure</title>
+    <title><%=i18n.page.config.CONFIG_PAGE_TITLE%></title>
     <link href="//at.alicdn.com/t/font_rphirxv7syp3c8fr.css" rel="stylesheet"/>
     <link href="/assert/css/pkg/ri.css" rel="stylesheet"/>
     <link href="/assert/css/config-page.css" rel=stylesheet />
     <link href="/assert/img/favicon.ico" rel="icon" />
 </head>
 <body>
-<%- include('/config/header.ejs', {selected: page.selected}) %>
+<%- include('/config/header.ejs', {selected: page.selected, i18n: i18n}) %>
 <div class="r-config-content">
-    <%- include(page.contentTemplate) %>
+    <%- include(page.contentTemplate, {i18n: i18n}) %>
 </div>
 </body>
 <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js"></script>

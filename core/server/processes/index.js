@@ -21,7 +21,8 @@ let cxt = {
     dbModel: {},
     cache: {
         data: {},
-        config: {}
+        config: {},
+        language: {}
     },
     constant: constant,
     services: {},
@@ -30,6 +31,15 @@ let cxt = {
         _cache[event] && _cache[event].forEach(listener => {
             listener.apply(null, cxt);
         })
+    },
+    invoke: function(event, ...cxt){
+        if (_cache[event]){
+            return _cache[event].map(execute => {
+                return execute.apply(null, cxt);
+            });
+        }
+
+        return [];
     },
     on: function(event, func){
         if (_cache[event]){
