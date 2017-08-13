@@ -1,12 +1,12 @@
 <html xmlns="http://www.w3.org/1999/html">
 <head>
-	<meta charset="utf-8"/>
-	<title></title>
-	<link href="/assert/css/pkg/ri.css" rel="stylesheet"/>
-	<link href="/assert/css/index-page.css" rel=stylesheet />
-	<link href="/assert/img/favicon.ico" rel="icon" />
+    <meta charset="utf-8"/>
+    <title><%=data.blog.title%></title>
+    <link href="/assert/css/pkg/ri.css" rel="stylesheet"/>
+    <link href="/assert/css/index-page.css" rel=stylesheet />
+    <link href="/assert/img/favicon.ico" rel="icon" />
 </head>
 <body>
-	<div class="r-i-header r-i-bg r-i-bg-default"></div>
+    <%- include(page.theme.viewRoot + '/' + page.theme.route['/']) %>
 </body>
 </html>

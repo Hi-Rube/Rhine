@@ -13,6 +13,13 @@ module.exports = (route, cxt) => {
     route.get('/*', function(){
         cxt.cache.config.isFirstInit ?
             this.redirect('/config') :
-            this.viewFile(path.join(__dirname, '../views/index.ejs'), cxt.cache.data);
+            this.viewFile(path.join(__dirname, '../views/index.ejs'), {
+                data: cxt.cache.data,
+                page: {
+                    theme: cxt.theme
+                }
+            }, {
+                root: cxt.theme.root
+            });
     });
 };

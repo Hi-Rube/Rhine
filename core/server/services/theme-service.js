@@ -23,7 +23,10 @@ module.exports = (mount, cxt) => {
             themeName = 'default';
         }
 
-        return require(`../../../themes/${themeName}/index.js`);
+        return {
+            name: themeName,
+            config: require(`../../../themes/${themeName}/index.js`)
+        };
     };
 
     mount.setThemeNowSelected = (name, userId) => {
@@ -44,9 +47,11 @@ module.exports = (mount, cxt) => {
         }
     };
 
-    mount.configTheme = (theme) => {
-        if (!theme){
-            theme = cxt.services.getThemeNowSelected();
+    mount.configTheme = (name, theme) => {
+        if (!theme || !name){
+            let rs = cxt.services.getThemeNowSelected();
+            theme = rs.config;
+            name = rs.name;
         }
 
         //目前只支持 ejs 模板引擎
@@ -57,9 +62,11 @@ module.exports = (mount, cxt) => {
 
         //配置转换
         cxt.theme.engine = theme.engine;
-        cxt.theme.cssRoot = './css';
-        cxt.theme.jsRoot = './js';
-        cxt.theme.viewRoot = './view';
+        cxt.theme.name = name;
+        cxt.theme.root = path.join(THEME_PATH, `./${name}`);
+        cxt.theme.cssRoot = '/css';
+        cxt.theme.jsRoot = '/js';
+        cxt.theme.viewRoot = '/view';
         cxt.theme.route = {};
         theme.route && cxt.constant.THEME_HOOK_ROUTE.forEach(item => {
             cxt.theme.route[item] = theme.route[item];

@@ -62,4 +62,13 @@ module.exports = (mount, cxt) => {
         setting && setting.id ? setting.saveSync(obj) : cxt.dbModel.Settings.createSync(obj);
         cxt.cache.data.blog.title = title;
     };
+
+    mount.getBlogTitle = () => {
+
+        let setting = cxt.dbModel.Settings.oneSync({
+            key: 'blog_title'
+        });
+
+        return setting && setting.value ? setting.value : 'Rhine';
+    };
 };

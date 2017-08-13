@@ -47,6 +47,9 @@ class CacheInitHandle extends BaseHandle{
                 cxt.cache.language.from = lang.pluginName;
             }
         }
+
+        /** 博客信息初始化 **/
+        cxt.cache.data.blog.title = cxt.services.getBlogTitle();
     }
 }
 
