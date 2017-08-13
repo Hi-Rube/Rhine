@@ -3,10 +3,14 @@
     <meta charset="utf-8"/>
     <title><%=data.blog.title%></title>
     <link href="/assert/css/pkg/ri.css" rel="stylesheet"/>
+    <link href="/assert/css/common.css" rel=stylesheet />
     <link href="/assert/css/index-page.css" rel=stylesheet />
     <link href="/assert/img/favicon.ico" rel="icon" />
 </head>
 <body>
+    <% if (page.isLogin){ %>
+        <%- include('/../../core/server/views/include/common/admin-bar.ejs', {i18n: i18n, user: null}) %>
+    <% }%>
     <%- include(page.theme.viewRoot + '/' + page.theme.route['/']) %>
 </body>
 </html>

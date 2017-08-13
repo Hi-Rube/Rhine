@@ -16,8 +16,10 @@ module.exports = (route, cxt) => {
             this.viewFile(path.join(__dirname, '../views/index.ejs'), {
                 data: cxt.cache.data,
                 page: {
-                    theme: cxt.theme
-                }
+                    theme: cxt.theme,
+                    isLogin: !!this.r.session.user
+                },
+                i18n: cxt.cache.language.i18n
             }, {
                 root: cxt.theme.root
             });

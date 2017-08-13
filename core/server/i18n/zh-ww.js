@@ -35,6 +35,9 @@ module.exports = {
             SUCCESS_MESSAGE: '恭喜你成功完成博客配置信息, 请选择下一步操作',
             ACTION_GO_INDEX: '浏览首页',
             ACTION_GO_ADMIN: '去管理'
+        },
+        adminBar: {
+            ACTION_ADMIN: '管理'
         }
     }
 };
