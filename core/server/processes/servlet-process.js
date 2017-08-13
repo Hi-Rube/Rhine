@@ -11,12 +11,14 @@ const BaseProcess = require('./base-process');
 const config = require('../../../config-runtime');
 const ControllerHandle = require('../handles/controller-handle');
 const ServerHandle = require('../handles/server-handle');
+const ThemeHandle = require('../handles/theme-handle');
 
 class ServletProcess extends BaseProcess{
     constructor(cxt){
         super(config, cxt);
         this.setHandle([
             ControllerHandle,
+            ThemeHandle,
             ServerHandle
         ]);
     }

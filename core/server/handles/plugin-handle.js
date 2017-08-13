@@ -7,11 +7,13 @@
  * of patent rights can be found in the PATENTS file in the same directory.
  */
 
-module.exports = {
-    engine: 'ejs',
-    route: {
-        '/': 'index.ejs',
-        '/list': 'blog.ejs',
-        '/post': 'detail.ejs'
+const BaseHandle = require('./base-handle');
+
+class PluginHandle extends BaseHandle{
+
+    run(subject, cxt){
+
     }
-};
+}
+
+module.exports = PluginHandle;

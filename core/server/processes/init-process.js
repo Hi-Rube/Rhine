@@ -12,11 +12,13 @@ const config = require('../../../config-runtime');
 const DbInitHandle = require('../handles/db-init-handle');
 const CacheInitHandle = require('../handles/cache-init-handle');
 const ServiceInitHandle = require('../handles/service-init-handle');
+const PluginHandle = require('../handles/plugin-handle');
 
 class InitProcess extends BaseProcess{
     constructor(cxt){
         super(config, cxt);
         this.setHandle([
+            PluginHandle,
             ServiceInitHandle,
             DbInitHandle,
             CacheInitHandle

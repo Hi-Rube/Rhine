@@ -24,6 +24,7 @@ let cxt = {
     },
     constant: constant,
     services: {},
+    theme: {},
     route: null,
     emit: function(event, ...cxt){
         _cache[event] && _cache[event].forEach(listener => {

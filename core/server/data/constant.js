@@ -13,5 +13,7 @@ module.exports = {
     EVENT_CACHE_CONFIG_CHANGE: 'cache:config:change',
     EVENT_HANDLE_DB_INIT_RETRY: 'handle:dbInit:retry',
 
-    FLAG_ROLE_ORIGIN: -1
+    FLAG_ROLE_ORIGIN: -1,
+
+    THEME_HOOK_ROUTE: ['/', '/list', '/post']
 };
