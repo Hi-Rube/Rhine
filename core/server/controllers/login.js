@@ -11,7 +11,7 @@ module.exports = (route, cxt) => {
 
     route.get('/login', function(){
         if (this.r.session.user){
-
+            this.redirect('/admin');
         } else {
             this.viewFile(path.join(__dirname, '../views/login.ejs'));
         }

@@ -21,6 +21,9 @@
   "bugs": {
     "url": "https://github.com/Hi-Rube/Rhine/issues"
   },
+  "engines": {
+    "fibjs": "0.8.0"
+  },
   "homepage": "https://github.com/Hi-Rube/Rhine#readme",
   "dependencies": {
     "fib-session": "0.1.0",
