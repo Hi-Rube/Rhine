@@ -34,10 +34,25 @@ module.exports = {
 
             SUCCESS_MESSAGE: '恭喜你成功完成博客配置信息, 请选择下一步操作',
             ACTION_GO_INDEX: '浏览首页',
-            ACTION_GO_ADMIN: '去管理'
+            ACTION_GO_ADMIN: '去管理',
+
+            TIP_INPUT_BLOG_NAME: '请设置博客名',
+            TIP_INPUT_ADMIN_NAME: '请设置管理员用户名',
+            TIP_INPUT_ADMIN_PASSWORD: '请设置管理员密码',
+            TIP_INPUT_PASSWORD_AGAIN: '请再次输入密码',
+            TIP_INPUT_EMAIL: '请输入您的邮箱',
+
+            TIP_INPUT_DB_NAME: '请输入数据库名',
+            TIP_INPUT_MYSQL_HOST: '请输入主机地址',
+            TIP_INPUT_MYSQL_PORT: '请输入主机端口',
+            TIP_INPUT_MYSQL_USER_NAME: '请输入数据库用户名',
+            TIP_INPUT_MYSQL_PASSWORD: '请输入数据库密码'
         },
         adminBar: {
             ACTION_ADMIN: '管理'
+        },
+        login: {
+            LOGIN_PAGE_TITLE: '登陆'
         }
     }
 };

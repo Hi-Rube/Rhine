@@ -13,7 +13,9 @@ module.exports = (route, cxt) => {
         if (this.r.session.user){
             this.redirect('/admin');
         } else {
-            this.viewFile(path.join(__dirname, '../views/login.ejs'));
+            this.viewFile(path.join(__dirname, '../views/login.ejs'), {
+                i18n: cxt.cache.language.i18n
+            });
         }
     });
 

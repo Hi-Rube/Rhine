@@ -13,29 +13,29 @@
         <div class="ds-sqlite-setting <% if (data.dbok && data.dbInfo.type === 'mysql'){ %> ri-hide <% } %>">
             <div class="ri-unit-input">
                 <label><%=i18n.page.config.DB_NAME%></label>
-                <input class="ri-input" name="name" placeholder="please input database name" value="<%= data.dbok && data.dbInfo['sqlite'] ? data.dbInfo['sqlite'].name : ''%>" type="text"/>
+                <input class="ri-input" name="name" placeholder="<%=i18n.page.config.TIP_INPUT_DB_NAME%>" value="<%= data.dbok && data.dbInfo['sqlite'] ? data.dbInfo['sqlite'].name : ''%>" type="text"/>
             </div>
         </div>
         <div class="ds-mysql-setting <% if (!data.dbok || (data.dbok && data.dbInfo.type === 'sqlite')){ %> ri-hide <% } %>">
             <div class="ri-unit-input">
                 <label><%=i18n.page.config.DB_NAME%></label>
-                <input class="ri-input" name="database" type="text" placeholder="please input database name" value="<%= data.dbok && data.dbInfo['mysql'] ? data.dbInfo['mysql'].database : ''%>"/>
+                <input class="ri-input" name="database" type="text" placeholder="<%=i18n.page.config.TIP_INPUT_DB_NAME%>" value="<%= data.dbok && data.dbInfo['mysql'] ? data.dbInfo['mysql'].database : ''%>"/>
             </div>
             <div class="ri-unit-input">
                 <label><%=i18n.page.config.MYSQL_HOST%></label>
-                <input class="ri-input" name="host" type="text" placeholder="please input mysql host" value="<%= data.dbok && data.dbInfo['mysql'] ? data.dbInfo['mysql'].host : ''%>"/>
+                <input class="ri-input" name="host" type="text" placeholder="<%=i18n.page.config.TIP_INPUT_MYSQL_HOST%>" value="<%= data.dbok && data.dbInfo['mysql'] ? data.dbInfo['mysql'].host : ''%>"/>
             </div>
             <div class="ri-unit-input">
                 <label><%=i18n.page.config.MYSQL_PORT%></label>
-                <input class="ri-input" name="port" type="text" placeholder="please input mysql port" value="<%= data.dbok && data.dbInfo['mysql'] ? data.dbInfo['mysql'].port : ''%>"/>
+                <input class="ri-input" name="port" type="text" placeholder="<%=i18n.page.config.TIP_INPUT_MYSQL_PORT%>" value="<%= data.dbok && data.dbInfo['mysql'] ? data.dbInfo['mysql'].port : ''%>"/>
             </div>
             <div class="ri-unit-input">
                 <label><%=i18n.page.config.MYSQL_USER_NAME%></label>
-                <input class="ri-input" name="user" type="text" placeholder="please input mysql user name" value="<%= data.dbok && data.dbInfo['mysql'] ? data.dbInfo['mysql'].user : ''%>"/>
+                <input class="ri-input" name="user" type="text" placeholder="<%=i18n.page.config.TIP_INPUT_MYSQL_USER_NAME%>" value="<%= data.dbok && data.dbInfo['mysql'] ? data.dbInfo['mysql'].user : ''%>"/>
             </div>
             <div class="ri-unit-input">
                 <label><%=i18n.page.config.MYSQL_PASSWORD%></label>
-                <input class="ri-input" name="password" type="text" placeholder="please input mysql user password" value="<%= data.dbok && data.dbInfo['mysql'] ? data.dbInfo['mysql'].password : ''%>"/>
+                <input class="ri-input" name="password" type="text" placeholder="<%=i18n.page.config.TIP_INPUT_MYSQL_PASSWORD%>" value="<%= data.dbok && data.dbInfo['mysql'] ? data.dbInfo['mysql'].password : ''%>"/>
             </div>
         </div>
         <button class="ri-button" type="submit">

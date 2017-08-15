@@ -6,23 +6,23 @@
         <form action="/config" method="post">
             <div class="ri-unit-input">
                 <label><%=i18n.page.config.BLOG_NAME%></label>
-                <input class="ri-input" type="text" name="blogName" placeholder="please input blog name"/>
+                <input class="ri-input" type="text" name="blogName" placeholder="<%=i18n.page.config.TIP_INPUT_BLOG_NAME%>"/>
             </div>
             <div class="ri-unit-input">
                 <label><%=i18n.page.config.ADMIN_NAME%></label>
-                <input class="ri-input" type="text" name="blogAdminName" placeholder="please input admin name"/>
+                <input class="ri-input" type="text" name="blogAdminName" placeholder="<%=i18n.page.config.TIP_INPUT_ADMIN_NAME%>"/>
             </div>
             <div class="ri-unit-input">
                 <label><%=i18n.page.config.ADMIN_PASSWORD%></label>
-                <input class="ri-input" type="password" name="blogAdminPwd" placeholder="please input admin password"/>
+                <input class="ri-input" type="password" name="blogAdminPwd" placeholder="<%=i18n.page.config.TIP_INPUT_ADMIN_PASSWORD%>"/>
             </div>
             <div class="ri-unit-input">
                 <label><%=i18n.page.config.PASSWORD_AGAIN%></label>
-                <input class="ri-input" type="password" name="blogAdminPwdA" placeholder="please input password again"/>
+                <input class="ri-input" type="password" name="blogAdminPwdA" placeholder="<%=i18n.page.config.TIP_INPUT_PASSWORD_AGAIN%>"/>
             </div>
             <div class="ri-unit-input">
                 <label><%=i18n.page.config.ADMIN_EMAIL%></label>
-                <input class="ri-input" type="email" name="blogAdminEmail" placeholder="please input your email"/>
+                <input class="ri-input" type="email" name="blogAdminEmail" placeholder="<%=i18n.page.config.TIP_INPUT_EMAIL%>"/>
             </div>
             <button class="ri-button" type="submit"><%=i18n.page.config.ACTION_SET_BLOG_INFO%></button>
             <input hidden name="action" value="blogInfo"/>
